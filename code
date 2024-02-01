@@ -1,0 +1,60 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    
+    string firstName;
+    string lastName;
+    int idNumber;
+    int scores;
+    int score, sumScore = 0;
+    float averageScore;
+
+    cin >> firstName >> lastName >> idNumber;
+    cin >> scores;
+
+    for (int i = 0; i < scores; i++)
+    {
+        cin >> score;
+        sumScore += score;
+    }
+
+    averageScore = sumScore / scores;
+
+    cout << "Name: " << lastName << ',' << ' ' << firstName << '\n';
+    cout << "ID: " << idNumber << '\n';
+    cout << "Grade: ";
+
+    if (averageScore < 40)
+    {
+        cout << 'T';
+    }
+    else if (averageScore < 55)
+    {
+        cout << 'D';
+    }
+    else if (averageScore < 70)
+    {
+        cout << 'P';
+    }
+    else if (averageScore < 80)
+    {
+        cout << 'A';
+    }
+    else if (averageScore < 90)
+    {
+        cout << 'E';
+    }
+    else
+    {
+        cout << 'O';
+    }
+
+
+    return 0;
+}
